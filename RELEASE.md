@@ -2,7 +2,7 @@
 
 *****************
 
-## Release ONDEWO S2T Csharp Client 1.0.0
+## Release ONDEWO S2T Csharp Client 7.5.0
 
 ### New Features
 
