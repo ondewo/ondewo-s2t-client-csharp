@@ -9,7 +9,7 @@
 * Initial release of the ONDEWO S2T C# client. The package `Ondewo.S2T.Client` ships the
   gRPC message and client stubs generated from the [ONDEWO S2T API](https://github.com/ondewo/ondewo-s2t-api)
   by the `ondewo-csharp-proto-compiler` image of
-  [ondewo-proto-compiler 5.15.0](https://github.com/ondewo/ondewo-proto-compiler): one
+  [ondewo-proto-compiler 5.15.1](https://github.com/ondewo/ondewo-proto-compiler): one
   `<Message>.cs` per proto plus one `<Service>Grpc.cs` per proto that declares a service, nested by C# namespace
   under `api/`.
 * The package targets `netstandard2.0`, so it is consumable from .NET Framework 4.6.1+, .NET Core 2.0+ and every
