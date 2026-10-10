@@ -51,21 +51,21 @@ That resolves the latest stable version. To pin one — which is what you want i
 the client version tracks the ONDEWO S2T API in major and minor:
 
 ```shell
-dotnet add package Ondewo.S2T.Client --version 7.5.0
+dotnet add package Ondewo.S2T.Client --version 7.5.1
 ```
 
 Or write the `PackageReference` item into your `.csproj` directly:
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Ondewo.S2T.Client" Version="7.5.0" />
+  <PackageReference Include="Ondewo.S2T.Client" Version="7.5.1" />
 </ItemGroup>
 ```
 
 In the Visual Studio Package Manager Console:
 
 ```powershell
-Install-Package Ondewo.S2T.Client -Version 7.5.0
+Install-Package Ondewo.S2T.Client -Version 7.5.1
 ```
 
 A few things worth knowing before you take the dependency:
