@@ -102,15 +102,15 @@ namespace Ondewo.S2T.Client.Tests
         public void TheReleasePublishesToNugetBeforeTheGithubRelease()
         {
             // A NuGet push that fails after the GitHub release would leave a GitHub release for a version that
-            // is not on nuget.org. The tag goes first: it is what triggers release.yml.
+            // is not on nuget.org. The tag goes first: a GitHub release needs it.
             List<string> steps = Recipe("release").Split('\n').Select(line => line.Trim()).ToList();
             int tag = steps.IndexOf("make create_release_tag");
-            int nuget = steps.IndexOf("make publish");
-            int github = steps.IndexOf("make push_to_gh");
+            int nuget = steps.IndexOf("make push_to_nuget_via_docker_image");
+            int github = steps.IndexOf("make release_to_github_via_docker_image");
 
-            Assert.True(tag >= 0 && nuget >= 0 && github >= 0, "release must run create_release_tag, publish and push_to_gh");
-            Assert.True(tag < nuget, "create_release_tag must run before publish");
-            Assert.True(nuget < github, "publish (NuGet) must run before push_to_gh (GitHub release)");
+            Assert.True(tag >= 0 && nuget >= 0 && github >= 0, "release must tag, push to NuGet and release to GitHub");
+            Assert.True(tag < nuget, "create_release_tag must run before the NuGet push");
+            Assert.True(nuget < github, "the NuGet push must run before the GitHub release");
         }
 
         [Fact]
